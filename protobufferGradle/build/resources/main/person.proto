@@ -1,12 +1,18 @@
 syntax = "proto3";
 
 message Person {
+  int32 Employee_ID = 1;
+  string First_Name = 2;
+  string Last_Name = 3;
+  string Email = 4;
+  string Department = 5;
+  int32 Building_Code = 6;
+  int32 Floor_Number = 7;
+}
 
-  string name = 1;
-  int32 age = 2;
-  string company = 3;
-  int32 building_code = 4;
-  string phone_number = 5;
-  string address = 6;
-  
+message Building {
+  string Building_Code = 1;
+  int32 Total_Floor = 2;
+  int32 Num_Companies = 3;
+  string Cafeteria_Code = 4;
 }

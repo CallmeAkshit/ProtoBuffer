@@ -17,78 +17,70 @@ public final class PersonOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <pre>
-     *int32 id = 1;
-     *int32 rollNumber = 4;
-     *string first_name = 2;
-     *string last_name = 3;
-     * </pre>
-     *
-     * <code>string name = 1;</code>
-     * @return The name.
+     * <code>int32 Employee_ID = 1;</code>
+     * @return The employeeID.
      */
-    java.lang.String getName();
+    int getEmployeeID();
+
     /**
-     * <pre>
-     *int32 id = 1;
-     *int32 rollNumber = 4;
-     *string first_name = 2;
-     *string last_name = 3;
-     * </pre>
-     *
-     * <code>string name = 1;</code>
-     * @return The bytes for name.
+     * <code>string First_Name = 2;</code>
+     * @return The firstName.
+     */
+    java.lang.String getFirstName();
+    /**
+     * <code>string First_Name = 2;</code>
+     * @return The bytes for firstName.
      */
     com.google.protobuf.ByteString
-        getNameBytes();
+        getFirstNameBytes();
 
     /**
-     * <code>int32 age = 2;</code>
-     * @return The age.
+     * <code>string Last_Name = 3;</code>
+     * @return The lastName.
      */
-    int getAge();
-
+    java.lang.String getLastName();
     /**
-     * <code>string company = 3;</code>
-     * @return The company.
-     */
-    java.lang.String getCompany();
-    /**
-     * <code>string company = 3;</code>
-     * @return The bytes for company.
+     * <code>string Last_Name = 3;</code>
+     * @return The bytes for lastName.
      */
     com.google.protobuf.ByteString
-        getCompanyBytes();
+        getLastNameBytes();
 
     /**
-     * <code>int32 building_code = 4;</code>
+     * <code>string Email = 4;</code>
+     * @return The email.
+     */
+    java.lang.String getEmail();
+    /**
+     * <code>string Email = 4;</code>
+     * @return The bytes for email.
+     */
+    com.google.protobuf.ByteString
+        getEmailBytes();
+
+    /**
+     * <code>string Department = 5;</code>
+     * @return The department.
+     */
+    java.lang.String getDepartment();
+    /**
+     * <code>string Department = 5;</code>
+     * @return The bytes for department.
+     */
+    com.google.protobuf.ByteString
+        getDepartmentBytes();
+
+    /**
+     * <code>int32 Building_Code = 6;</code>
      * @return The buildingCode.
      */
     int getBuildingCode();
 
     /**
-     * <code>string phone_number = 5;</code>
-     * @return The phoneNumber.
+     * <code>int32 Floor_Number = 7;</code>
+     * @return The floorNumber.
      */
-    java.lang.String getPhoneNumber();
-    /**
-     * <code>string phone_number = 5;</code>
-     * @return The bytes for phoneNumber.
-     */
-    com.google.protobuf.ByteString
-        getPhoneNumberBytes();
-
-    /**
-     * <code>string address = 6;</code>
-     * @return The address.
-     */
-    java.lang.String getAddress();
-    /**
-     * <code>string address = 6;</code>
-     * @return The bytes for address.
-     */
-    com.google.protobuf.ByteString
-        getAddressBytes();
+    int getFloorNumber();
   }
   /**
    * Protobuf type {@code Person}
@@ -103,10 +95,10 @@ public final class PersonOuterClass {
       super(builder);
     }
     private Person() {
-      name_ = "";
-      company_ = "";
-      phoneNumber_ = "";
-      address_ = "";
+      firstName_ = "";
+      lastName_ = "";
+      email_ = "";
+      department_ = "";
     }
 
     @java.lang.Override
@@ -139,38 +131,43 @@ public final class PersonOuterClass {
             case 0:
               done = true;
               break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 8: {
 
-              name_ = s;
+              employeeID_ = input.readInt32();
               break;
             }
-            case 16: {
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              age_ = input.readInt32();
+              firstName_ = s;
               break;
             }
             case 26: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              company_ = s;
+              lastName_ = s;
               break;
             }
-            case 32: {
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              buildingCode_ = input.readInt32();
+              email_ = s;
               break;
             }
             case 42: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              phoneNumber_ = s;
+              department_ = s;
               break;
             }
-            case 50: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 48: {
 
-              address_ = s;
+              buildingCode_ = input.readInt32();
+              break;
+            }
+            case 56: {
+
+              floorNumber_ = input.readInt32();
               break;
             }
             default: {
@@ -205,111 +202,173 @@ public final class PersonOuterClass {
               PersonOuterClass.Person.class, PersonOuterClass.Person.Builder.class);
     }
 
-    public static final int NAME_FIELD_NUMBER = 1;
-    private volatile java.lang.Object name_;
+    public static final int EMPLOYEE_ID_FIELD_NUMBER = 1;
+    private int employeeID_;
     /**
-     * <pre>
-     *int32 id = 1;
-     *int32 rollNumber = 4;
-     *string first_name = 2;
-     *string last_name = 3;
-     * </pre>
-     *
-     * <code>string name = 1;</code>
-     * @return The name.
+     * <code>int32 Employee_ID = 1;</code>
+     * @return The employeeID.
      */
     @java.lang.Override
-    public java.lang.String getName() {
-      java.lang.Object ref = name_;
+    public int getEmployeeID() {
+      return employeeID_;
+    }
+
+    public static final int FIRST_NAME_FIELD_NUMBER = 2;
+    private volatile java.lang.Object firstName_;
+    /**
+     * <code>string First_Name = 2;</code>
+     * @return The firstName.
+     */
+    @java.lang.Override
+    public java.lang.String getFirstName() {
+      java.lang.Object ref = firstName_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        name_ = s;
+        firstName_ = s;
         return s;
       }
     }
     /**
-     * <pre>
-     *int32 id = 1;
-     *int32 rollNumber = 4;
-     *string first_name = 2;
-     *string last_name = 3;
-     * </pre>
-     *
-     * <code>string name = 1;</code>
-     * @return The bytes for name.
+     * <code>string First_Name = 2;</code>
+     * @return The bytes for firstName.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getNameBytes() {
-      java.lang.Object ref = name_;
+        getFirstNameBytes() {
+      java.lang.Object ref = firstName_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        name_ = b;
+        firstName_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
 
-    public static final int AGE_FIELD_NUMBER = 2;
-    private int age_;
+    public static final int LAST_NAME_FIELD_NUMBER = 3;
+    private volatile java.lang.Object lastName_;
     /**
-     * <code>int32 age = 2;</code>
-     * @return The age.
+     * <code>string Last_Name = 3;</code>
+     * @return The lastName.
      */
     @java.lang.Override
-    public int getAge() {
-      return age_;
-    }
-
-    public static final int COMPANY_FIELD_NUMBER = 3;
-    private volatile java.lang.Object company_;
-    /**
-     * <code>string company = 3;</code>
-     * @return The company.
-     */
-    @java.lang.Override
-    public java.lang.String getCompany() {
-      java.lang.Object ref = company_;
+    public java.lang.String getLastName() {
+      java.lang.Object ref = lastName_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        company_ = s;
+        lastName_ = s;
         return s;
       }
     }
     /**
-     * <code>string company = 3;</code>
-     * @return The bytes for company.
+     * <code>string Last_Name = 3;</code>
+     * @return The bytes for lastName.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getCompanyBytes() {
-      java.lang.Object ref = company_;
+        getLastNameBytes() {
+      java.lang.Object ref = lastName_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        company_ = b;
+        lastName_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
 
-    public static final int BUILDING_CODE_FIELD_NUMBER = 4;
+    public static final int EMAIL_FIELD_NUMBER = 4;
+    private volatile java.lang.Object email_;
+    /**
+     * <code>string Email = 4;</code>
+     * @return The email.
+     */
+    @java.lang.Override
+    public java.lang.String getEmail() {
+      java.lang.Object ref = email_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        email_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string Email = 4;</code>
+     * @return The bytes for email.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getEmailBytes() {
+      java.lang.Object ref = email_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        email_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int DEPARTMENT_FIELD_NUMBER = 5;
+    private volatile java.lang.Object department_;
+    /**
+     * <code>string Department = 5;</code>
+     * @return The department.
+     */
+    @java.lang.Override
+    public java.lang.String getDepartment() {
+      java.lang.Object ref = department_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        department_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string Department = 5;</code>
+     * @return The bytes for department.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getDepartmentBytes() {
+      java.lang.Object ref = department_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        department_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int BUILDING_CODE_FIELD_NUMBER = 6;
     private int buildingCode_;
     /**
-     * <code>int32 building_code = 4;</code>
+     * <code>int32 Building_Code = 6;</code>
      * @return The buildingCode.
      */
     @java.lang.Override
@@ -317,80 +376,15 @@ public final class PersonOuterClass {
       return buildingCode_;
     }
 
-    public static final int PHONE_NUMBER_FIELD_NUMBER = 5;
-    private volatile java.lang.Object phoneNumber_;
+    public static final int FLOOR_NUMBER_FIELD_NUMBER = 7;
+    private int floorNumber_;
     /**
-     * <code>string phone_number = 5;</code>
-     * @return The phoneNumber.
+     * <code>int32 Floor_Number = 7;</code>
+     * @return The floorNumber.
      */
     @java.lang.Override
-    public java.lang.String getPhoneNumber() {
-      java.lang.Object ref = phoneNumber_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        phoneNumber_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string phone_number = 5;</code>
-     * @return The bytes for phoneNumber.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getPhoneNumberBytes() {
-      java.lang.Object ref = phoneNumber_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        phoneNumber_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int ADDRESS_FIELD_NUMBER = 6;
-    private volatile java.lang.Object address_;
-    /**
-     * <code>string address = 6;</code>
-     * @return The address.
-     */
-    @java.lang.Override
-    public java.lang.String getAddress() {
-      java.lang.Object ref = address_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        address_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string address = 6;</code>
-     * @return The bytes for address.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getAddressBytes() {
-      java.lang.Object ref = address_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        address_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public int getFloorNumber() {
+      return floorNumber_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -407,23 +401,26 @@ public final class PersonOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getNameBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
+      if (employeeID_ != 0) {
+        output.writeInt32(1, employeeID_);
       }
-      if (age_ != 0) {
-        output.writeInt32(2, age_);
+      if (!getFirstNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, firstName_);
       }
-      if (!getCompanyBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, company_);
+      if (!getLastNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, lastName_);
+      }
+      if (!getEmailBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, email_);
+      }
+      if (!getDepartmentBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, department_);
       }
       if (buildingCode_ != 0) {
-        output.writeInt32(4, buildingCode_);
+        output.writeInt32(6, buildingCode_);
       }
-      if (!getPhoneNumberBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, phoneNumber_);
-      }
-      if (!getAddressBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, address_);
+      if (floorNumber_ != 0) {
+        output.writeInt32(7, floorNumber_);
       }
       unknownFields.writeTo(output);
     }
@@ -434,25 +431,29 @@ public final class PersonOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (!getNameBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
-      }
-      if (age_ != 0) {
+      if (employeeID_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(2, age_);
+          .computeInt32Size(1, employeeID_);
       }
-      if (!getCompanyBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, company_);
+      if (!getFirstNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, firstName_);
+      }
+      if (!getLastNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, lastName_);
+      }
+      if (!getEmailBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, email_);
+      }
+      if (!getDepartmentBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, department_);
       }
       if (buildingCode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(4, buildingCode_);
+          .computeInt32Size(6, buildingCode_);
       }
-      if (!getPhoneNumberBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, phoneNumber_);
-      }
-      if (!getAddressBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, address_);
+      if (floorNumber_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(7, floorNumber_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -469,18 +470,20 @@ public final class PersonOuterClass {
       }
       PersonOuterClass.Person other = (PersonOuterClass.Person) obj;
 
-      if (!getName()
-          .equals(other.getName())) return false;
-      if (getAge()
-          != other.getAge()) return false;
-      if (!getCompany()
-          .equals(other.getCompany())) return false;
+      if (getEmployeeID()
+          != other.getEmployeeID()) return false;
+      if (!getFirstName()
+          .equals(other.getFirstName())) return false;
+      if (!getLastName()
+          .equals(other.getLastName())) return false;
+      if (!getEmail()
+          .equals(other.getEmail())) return false;
+      if (!getDepartment()
+          .equals(other.getDepartment())) return false;
       if (getBuildingCode()
           != other.getBuildingCode()) return false;
-      if (!getPhoneNumber()
-          .equals(other.getPhoneNumber())) return false;
-      if (!getAddress()
-          .equals(other.getAddress())) return false;
+      if (getFloorNumber()
+          != other.getFloorNumber()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -492,18 +495,20 @@ public final class PersonOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + NAME_FIELD_NUMBER;
-      hash = (53 * hash) + getName().hashCode();
-      hash = (37 * hash) + AGE_FIELD_NUMBER;
-      hash = (53 * hash) + getAge();
-      hash = (37 * hash) + COMPANY_FIELD_NUMBER;
-      hash = (53 * hash) + getCompany().hashCode();
+      hash = (37 * hash) + EMPLOYEE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getEmployeeID();
+      hash = (37 * hash) + FIRST_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getFirstName().hashCode();
+      hash = (37 * hash) + LAST_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getLastName().hashCode();
+      hash = (37 * hash) + EMAIL_FIELD_NUMBER;
+      hash = (53 * hash) + getEmail().hashCode();
+      hash = (37 * hash) + DEPARTMENT_FIELD_NUMBER;
+      hash = (53 * hash) + getDepartment().hashCode();
       hash = (37 * hash) + BUILDING_CODE_FIELD_NUMBER;
       hash = (53 * hash) + getBuildingCode();
-      hash = (37 * hash) + PHONE_NUMBER_FIELD_NUMBER;
-      hash = (53 * hash) + getPhoneNumber().hashCode();
-      hash = (37 * hash) + ADDRESS_FIELD_NUMBER;
-      hash = (53 * hash) + getAddress().hashCode();
+      hash = (37 * hash) + FLOOR_NUMBER_FIELD_NUMBER;
+      hash = (53 * hash) + getFloorNumber();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -637,17 +642,19 @@ public final class PersonOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        name_ = "";
+        employeeID_ = 0;
 
-        age_ = 0;
+        firstName_ = "";
 
-        company_ = "";
+        lastName_ = "";
+
+        email_ = "";
+
+        department_ = "";
 
         buildingCode_ = 0;
 
-        phoneNumber_ = "";
-
-        address_ = "";
+        floorNumber_ = 0;
 
         return this;
       }
@@ -675,12 +682,13 @@ public final class PersonOuterClass {
       @java.lang.Override
       public PersonOuterClass.Person buildPartial() {
         PersonOuterClass.Person result = new PersonOuterClass.Person(this);
-        result.name_ = name_;
-        result.age_ = age_;
-        result.company_ = company_;
+        result.employeeID_ = employeeID_;
+        result.firstName_ = firstName_;
+        result.lastName_ = lastName_;
+        result.email_ = email_;
+        result.department_ = department_;
         result.buildingCode_ = buildingCode_;
-        result.phoneNumber_ = phoneNumber_;
-        result.address_ = address_;
+        result.floorNumber_ = floorNumber_;
         onBuilt();
         return result;
       }
@@ -729,27 +737,30 @@ public final class PersonOuterClass {
 
       public Builder mergeFrom(PersonOuterClass.Person other) {
         if (other == PersonOuterClass.Person.getDefaultInstance()) return this;
-        if (!other.getName().isEmpty()) {
-          name_ = other.name_;
+        if (other.getEmployeeID() != 0) {
+          setEmployeeID(other.getEmployeeID());
+        }
+        if (!other.getFirstName().isEmpty()) {
+          firstName_ = other.firstName_;
           onChanged();
         }
-        if (other.getAge() != 0) {
-          setAge(other.getAge());
+        if (!other.getLastName().isEmpty()) {
+          lastName_ = other.lastName_;
+          onChanged();
         }
-        if (!other.getCompany().isEmpty()) {
-          company_ = other.company_;
+        if (!other.getEmail().isEmpty()) {
+          email_ = other.email_;
+          onChanged();
+        }
+        if (!other.getDepartment().isEmpty()) {
+          department_ = other.department_;
           onChanged();
         }
         if (other.getBuildingCode() != 0) {
           setBuildingCode(other.getBuildingCode());
         }
-        if (!other.getPhoneNumber().isEmpty()) {
-          phoneNumber_ = other.phoneNumber_;
-          onChanged();
-        }
-        if (!other.getAddress().isEmpty()) {
-          address_ = other.address_;
-          onChanged();
+        if (other.getFloorNumber() != 0) {
+          setFloorNumber(other.getFloorNumber());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -780,227 +791,344 @@ public final class PersonOuterClass {
         return this;
       }
 
-      private java.lang.Object name_ = "";
+      private int employeeID_ ;
       /**
-       * <pre>
-       *int32 id = 1;
-       *int32 rollNumber = 4;
-       *string first_name = 2;
-       *string last_name = 3;
-       * </pre>
-       *
-       * <code>string name = 1;</code>
-       * @return The name.
-       */
-      public java.lang.String getName() {
-        java.lang.Object ref = name_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          name_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       *int32 id = 1;
-       *int32 rollNumber = 4;
-       *string first_name = 2;
-       *string last_name = 3;
-       * </pre>
-       *
-       * <code>string name = 1;</code>
-       * @return The bytes for name.
-       */
-      public com.google.protobuf.ByteString
-          getNameBytes() {
-        java.lang.Object ref = name_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          name_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       *int32 id = 1;
-       *int32 rollNumber = 4;
-       *string first_name = 2;
-       *string last_name = 3;
-       * </pre>
-       *
-       * <code>string name = 1;</code>
-       * @param value The name to set.
-       * @return This builder for chaining.
-       */
-      public Builder setName(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        name_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *int32 id = 1;
-       *int32 rollNumber = 4;
-       *string first_name = 2;
-       *string last_name = 3;
-       * </pre>
-       *
-       * <code>string name = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearName() {
-        
-        name_ = getDefaultInstance().getName();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *int32 id = 1;
-       *int32 rollNumber = 4;
-       *string first_name = 2;
-       *string last_name = 3;
-       * </pre>
-       *
-       * <code>string name = 1;</code>
-       * @param value The bytes for name to set.
-       * @return This builder for chaining.
-       */
-      public Builder setNameBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        name_ = value;
-        onChanged();
-        return this;
-      }
-
-      private int age_ ;
-      /**
-       * <code>int32 age = 2;</code>
-       * @return The age.
+       * <code>int32 Employee_ID = 1;</code>
+       * @return The employeeID.
        */
       @java.lang.Override
-      public int getAge() {
-        return age_;
+      public int getEmployeeID() {
+        return employeeID_;
       }
       /**
-       * <code>int32 age = 2;</code>
-       * @param value The age to set.
+       * <code>int32 Employee_ID = 1;</code>
+       * @param value The employeeID to set.
        * @return This builder for chaining.
        */
-      public Builder setAge(int value) {
+      public Builder setEmployeeID(int value) {
         
-        age_ = value;
+        employeeID_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>int32 age = 2;</code>
+       * <code>int32 Employee_ID = 1;</code>
        * @return This builder for chaining.
        */
-      public Builder clearAge() {
+      public Builder clearEmployeeID() {
         
-        age_ = 0;
+        employeeID_ = 0;
         onChanged();
         return this;
       }
 
-      private java.lang.Object company_ = "";
+      private java.lang.Object firstName_ = "";
       /**
-       * <code>string company = 3;</code>
-       * @return The company.
+       * <code>string First_Name = 2;</code>
+       * @return The firstName.
        */
-      public java.lang.String getCompany() {
-        java.lang.Object ref = company_;
+      public java.lang.String getFirstName() {
+        java.lang.Object ref = firstName_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          company_ = s;
+          firstName_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string company = 3;</code>
-       * @return The bytes for company.
+       * <code>string First_Name = 2;</code>
+       * @return The bytes for firstName.
        */
       public com.google.protobuf.ByteString
-          getCompanyBytes() {
-        java.lang.Object ref = company_;
+          getFirstNameBytes() {
+        java.lang.Object ref = firstName_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          company_ = b;
+          firstName_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string company = 3;</code>
-       * @param value The company to set.
+       * <code>string First_Name = 2;</code>
+       * @param value The firstName to set.
        * @return This builder for chaining.
        */
-      public Builder setCompany(
+      public Builder setFirstName(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        company_ = value;
+        firstName_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string company = 3;</code>
+       * <code>string First_Name = 2;</code>
        * @return This builder for chaining.
        */
-      public Builder clearCompany() {
+      public Builder clearFirstName() {
         
-        company_ = getDefaultInstance().getCompany();
+        firstName_ = getDefaultInstance().getFirstName();
         onChanged();
         return this;
       }
       /**
-       * <code>string company = 3;</code>
-       * @param value The bytes for company to set.
+       * <code>string First_Name = 2;</code>
+       * @param value The bytes for firstName to set.
        * @return This builder for chaining.
        */
-      public Builder setCompanyBytes(
+      public Builder setFirstNameBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        company_ = value;
+        firstName_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object lastName_ = "";
+      /**
+       * <code>string Last_Name = 3;</code>
+       * @return The lastName.
+       */
+      public java.lang.String getLastName() {
+        java.lang.Object ref = lastName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          lastName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string Last_Name = 3;</code>
+       * @return The bytes for lastName.
+       */
+      public com.google.protobuf.ByteString
+          getLastNameBytes() {
+        java.lang.Object ref = lastName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          lastName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string Last_Name = 3;</code>
+       * @param value The lastName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLastName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        lastName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string Last_Name = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearLastName() {
+        
+        lastName_ = getDefaultInstance().getLastName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string Last_Name = 3;</code>
+       * @param value The bytes for lastName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLastNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        lastName_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object email_ = "";
+      /**
+       * <code>string Email = 4;</code>
+       * @return The email.
+       */
+      public java.lang.String getEmail() {
+        java.lang.Object ref = email_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          email_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string Email = 4;</code>
+       * @return The bytes for email.
+       */
+      public com.google.protobuf.ByteString
+          getEmailBytes() {
+        java.lang.Object ref = email_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          email_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string Email = 4;</code>
+       * @param value The email to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEmail(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        email_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string Email = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearEmail() {
+        
+        email_ = getDefaultInstance().getEmail();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string Email = 4;</code>
+       * @param value The bytes for email to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEmailBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        email_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object department_ = "";
+      /**
+       * <code>string Department = 5;</code>
+       * @return The department.
+       */
+      public java.lang.String getDepartment() {
+        java.lang.Object ref = department_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          department_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string Department = 5;</code>
+       * @return The bytes for department.
+       */
+      public com.google.protobuf.ByteString
+          getDepartmentBytes() {
+        java.lang.Object ref = department_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          department_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string Department = 5;</code>
+       * @param value The department to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDepartment(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        department_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string Department = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDepartment() {
+        
+        department_ = getDefaultInstance().getDepartment();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string Department = 5;</code>
+       * @param value The bytes for department to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDepartmentBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        department_ = value;
         onChanged();
         return this;
       }
 
       private int buildingCode_ ;
       /**
-       * <code>int32 building_code = 4;</code>
+       * <code>int32 Building_Code = 6;</code>
        * @return The buildingCode.
        */
       @java.lang.Override
@@ -1008,7 +1136,7 @@ public final class PersonOuterClass {
         return buildingCode_;
       }
       /**
-       * <code>int32 building_code = 4;</code>
+       * <code>int32 Building_Code = 6;</code>
        * @param value The buildingCode to set.
        * @return This builder for chaining.
        */
@@ -1019,7 +1147,7 @@ public final class PersonOuterClass {
         return this;
       }
       /**
-       * <code>int32 building_code = 4;</code>
+       * <code>int32 Building_Code = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearBuildingCode() {
@@ -1029,154 +1157,33 @@ public final class PersonOuterClass {
         return this;
       }
 
-      private java.lang.Object phoneNumber_ = "";
+      private int floorNumber_ ;
       /**
-       * <code>string phone_number = 5;</code>
-       * @return The phoneNumber.
+       * <code>int32 Floor_Number = 7;</code>
+       * @return The floorNumber.
        */
-      public java.lang.String getPhoneNumber() {
-        java.lang.Object ref = phoneNumber_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          phoneNumber_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      @java.lang.Override
+      public int getFloorNumber() {
+        return floorNumber_;
       }
       /**
-       * <code>string phone_number = 5;</code>
-       * @return The bytes for phoneNumber.
-       */
-      public com.google.protobuf.ByteString
-          getPhoneNumberBytes() {
-        java.lang.Object ref = phoneNumber_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          phoneNumber_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string phone_number = 5;</code>
-       * @param value The phoneNumber to set.
+       * <code>int32 Floor_Number = 7;</code>
+       * @param value The floorNumber to set.
        * @return This builder for chaining.
        */
-      public Builder setPhoneNumber(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        phoneNumber_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string phone_number = 5;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearPhoneNumber() {
+      public Builder setFloorNumber(int value) {
         
-        phoneNumber_ = getDefaultInstance().getPhoneNumber();
+        floorNumber_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string phone_number = 5;</code>
-       * @param value The bytes for phoneNumber to set.
+       * <code>int32 Floor_Number = 7;</code>
        * @return This builder for chaining.
        */
-      public Builder setPhoneNumberBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
+      public Builder clearFloorNumber() {
         
-        phoneNumber_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object address_ = "";
-      /**
-       * <code>string address = 6;</code>
-       * @return The address.
-       */
-      public java.lang.String getAddress() {
-        java.lang.Object ref = address_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          address_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string address = 6;</code>
-       * @return The bytes for address.
-       */
-      public com.google.protobuf.ByteString
-          getAddressBytes() {
-        java.lang.Object ref = address_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          address_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string address = 6;</code>
-       * @param value The address to set.
-       * @return This builder for chaining.
-       */
-      public Builder setAddress(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        address_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string address = 6;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearAddress() {
-        
-        address_ = getDefaultInstance().getAddress();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string address = 6;</code>
-       * @param value The bytes for address to set.
-       * @return This builder for chaining.
-       */
-      public Builder setAddressBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        address_ = value;
+        floorNumber_ = 0;
         onChanged();
         return this;
       }
@@ -1233,11 +1240,874 @@ public final class PersonOuterClass {
 
   }
 
+  public interface BuildingOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:Building)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string Building_Code = 1;</code>
+     * @return The buildingCode.
+     */
+    java.lang.String getBuildingCode();
+    /**
+     * <code>string Building_Code = 1;</code>
+     * @return The bytes for buildingCode.
+     */
+    com.google.protobuf.ByteString
+        getBuildingCodeBytes();
+
+    /**
+     * <code>int32 Total_Floor = 2;</code>
+     * @return The totalFloor.
+     */
+    int getTotalFloor();
+
+    /**
+     * <code>int32 Num_Companies = 3;</code>
+     * @return The numCompanies.
+     */
+    int getNumCompanies();
+
+    /**
+     * <code>string Cafeteria_Code = 4;</code>
+     * @return The cafeteriaCode.
+     */
+    java.lang.String getCafeteriaCode();
+    /**
+     * <code>string Cafeteria_Code = 4;</code>
+     * @return The bytes for cafeteriaCode.
+     */
+    com.google.protobuf.ByteString
+        getCafeteriaCodeBytes();
+  }
+  /**
+   * Protobuf type {@code Building}
+   */
+  public static final class Building extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:Building)
+      BuildingOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use Building.newBuilder() to construct.
+    private Building(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private Building() {
+      buildingCode_ = "";
+      cafeteriaCode_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new Building();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private Building(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              buildingCode_ = s;
+              break;
+            }
+            case 16: {
+
+              totalFloor_ = input.readInt32();
+              break;
+            }
+            case 24: {
+
+              numCompanies_ = input.readInt32();
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              cafeteriaCode_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return PersonOuterClass.internal_static_Building_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return PersonOuterClass.internal_static_Building_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              PersonOuterClass.Building.class, PersonOuterClass.Building.Builder.class);
+    }
+
+    public static final int BUILDING_CODE_FIELD_NUMBER = 1;
+    private volatile java.lang.Object buildingCode_;
+    /**
+     * <code>string Building_Code = 1;</code>
+     * @return The buildingCode.
+     */
+    @java.lang.Override
+    public java.lang.String getBuildingCode() {
+      java.lang.Object ref = buildingCode_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        buildingCode_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string Building_Code = 1;</code>
+     * @return The bytes for buildingCode.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getBuildingCodeBytes() {
+      java.lang.Object ref = buildingCode_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        buildingCode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int TOTAL_FLOOR_FIELD_NUMBER = 2;
+    private int totalFloor_;
+    /**
+     * <code>int32 Total_Floor = 2;</code>
+     * @return The totalFloor.
+     */
+    @java.lang.Override
+    public int getTotalFloor() {
+      return totalFloor_;
+    }
+
+    public static final int NUM_COMPANIES_FIELD_NUMBER = 3;
+    private int numCompanies_;
+    /**
+     * <code>int32 Num_Companies = 3;</code>
+     * @return The numCompanies.
+     */
+    @java.lang.Override
+    public int getNumCompanies() {
+      return numCompanies_;
+    }
+
+    public static final int CAFETERIA_CODE_FIELD_NUMBER = 4;
+    private volatile java.lang.Object cafeteriaCode_;
+    /**
+     * <code>string Cafeteria_Code = 4;</code>
+     * @return The cafeteriaCode.
+     */
+    @java.lang.Override
+    public java.lang.String getCafeteriaCode() {
+      java.lang.Object ref = cafeteriaCode_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        cafeteriaCode_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string Cafeteria_Code = 4;</code>
+     * @return The bytes for cafeteriaCode.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getCafeteriaCodeBytes() {
+      java.lang.Object ref = cafeteriaCode_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        cafeteriaCode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getBuildingCodeBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, buildingCode_);
+      }
+      if (totalFloor_ != 0) {
+        output.writeInt32(2, totalFloor_);
+      }
+      if (numCompanies_ != 0) {
+        output.writeInt32(3, numCompanies_);
+      }
+      if (!getCafeteriaCodeBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, cafeteriaCode_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getBuildingCodeBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, buildingCode_);
+      }
+      if (totalFloor_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, totalFloor_);
+      }
+      if (numCompanies_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(3, numCompanies_);
+      }
+      if (!getCafeteriaCodeBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, cafeteriaCode_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof PersonOuterClass.Building)) {
+        return super.equals(obj);
+      }
+      PersonOuterClass.Building other = (PersonOuterClass.Building) obj;
+
+      if (!getBuildingCode()
+          .equals(other.getBuildingCode())) return false;
+      if (getTotalFloor()
+          != other.getTotalFloor()) return false;
+      if (getNumCompanies()
+          != other.getNumCompanies()) return false;
+      if (!getCafeteriaCode()
+          .equals(other.getCafeteriaCode())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + BUILDING_CODE_FIELD_NUMBER;
+      hash = (53 * hash) + getBuildingCode().hashCode();
+      hash = (37 * hash) + TOTAL_FLOOR_FIELD_NUMBER;
+      hash = (53 * hash) + getTotalFloor();
+      hash = (37 * hash) + NUM_COMPANIES_FIELD_NUMBER;
+      hash = (53 * hash) + getNumCompanies();
+      hash = (37 * hash) + CAFETERIA_CODE_FIELD_NUMBER;
+      hash = (53 * hash) + getCafeteriaCode().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static PersonOuterClass.Building parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static PersonOuterClass.Building parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static PersonOuterClass.Building parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static PersonOuterClass.Building parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static PersonOuterClass.Building parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static PersonOuterClass.Building parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static PersonOuterClass.Building parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static PersonOuterClass.Building parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static PersonOuterClass.Building parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static PersonOuterClass.Building parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static PersonOuterClass.Building parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static PersonOuterClass.Building parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(PersonOuterClass.Building prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code Building}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:Building)
+        PersonOuterClass.BuildingOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return PersonOuterClass.internal_static_Building_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return PersonOuterClass.internal_static_Building_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                PersonOuterClass.Building.class, PersonOuterClass.Building.Builder.class);
+      }
+
+      // Construct using com.manish.assignment3.PersonOuterClass.Building.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        buildingCode_ = "";
+
+        totalFloor_ = 0;
+
+        numCompanies_ = 0;
+
+        cafeteriaCode_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return PersonOuterClass.internal_static_Building_descriptor;
+      }
+
+      @java.lang.Override
+      public PersonOuterClass.Building getDefaultInstanceForType() {
+        return PersonOuterClass.Building.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public PersonOuterClass.Building build() {
+        PersonOuterClass.Building result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public PersonOuterClass.Building buildPartial() {
+        PersonOuterClass.Building result = new PersonOuterClass.Building(this);
+        result.buildingCode_ = buildingCode_;
+        result.totalFloor_ = totalFloor_;
+        result.numCompanies_ = numCompanies_;
+        result.cafeteriaCode_ = cafeteriaCode_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof PersonOuterClass.Building) {
+          return mergeFrom((PersonOuterClass.Building)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(PersonOuterClass.Building other) {
+        if (other == PersonOuterClass.Building.getDefaultInstance()) return this;
+        if (!other.getBuildingCode().isEmpty()) {
+          buildingCode_ = other.buildingCode_;
+          onChanged();
+        }
+        if (other.getTotalFloor() != 0) {
+          setTotalFloor(other.getTotalFloor());
+        }
+        if (other.getNumCompanies() != 0) {
+          setNumCompanies(other.getNumCompanies());
+        }
+        if (!other.getCafeteriaCode().isEmpty()) {
+          cafeteriaCode_ = other.cafeteriaCode_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        PersonOuterClass.Building parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (PersonOuterClass.Building) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object buildingCode_ = "";
+      /**
+       * <code>string Building_Code = 1;</code>
+       * @return The buildingCode.
+       */
+      public java.lang.String getBuildingCode() {
+        java.lang.Object ref = buildingCode_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          buildingCode_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string Building_Code = 1;</code>
+       * @return The bytes for buildingCode.
+       */
+      public com.google.protobuf.ByteString
+          getBuildingCodeBytes() {
+        java.lang.Object ref = buildingCode_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          buildingCode_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string Building_Code = 1;</code>
+       * @param value The buildingCode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBuildingCode(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        buildingCode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string Building_Code = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearBuildingCode() {
+        
+        buildingCode_ = getDefaultInstance().getBuildingCode();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string Building_Code = 1;</code>
+       * @param value The bytes for buildingCode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBuildingCodeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        buildingCode_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int totalFloor_ ;
+      /**
+       * <code>int32 Total_Floor = 2;</code>
+       * @return The totalFloor.
+       */
+      @java.lang.Override
+      public int getTotalFloor() {
+        return totalFloor_;
+      }
+      /**
+       * <code>int32 Total_Floor = 2;</code>
+       * @param value The totalFloor to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTotalFloor(int value) {
+        
+        totalFloor_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 Total_Floor = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTotalFloor() {
+        
+        totalFloor_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int numCompanies_ ;
+      /**
+       * <code>int32 Num_Companies = 3;</code>
+       * @return The numCompanies.
+       */
+      @java.lang.Override
+      public int getNumCompanies() {
+        return numCompanies_;
+      }
+      /**
+       * <code>int32 Num_Companies = 3;</code>
+       * @param value The numCompanies to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNumCompanies(int value) {
+        
+        numCompanies_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 Num_Companies = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearNumCompanies() {
+        
+        numCompanies_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object cafeteriaCode_ = "";
+      /**
+       * <code>string Cafeteria_Code = 4;</code>
+       * @return The cafeteriaCode.
+       */
+      public java.lang.String getCafeteriaCode() {
+        java.lang.Object ref = cafeteriaCode_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          cafeteriaCode_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string Cafeteria_Code = 4;</code>
+       * @return The bytes for cafeteriaCode.
+       */
+      public com.google.protobuf.ByteString
+          getCafeteriaCodeBytes() {
+        java.lang.Object ref = cafeteriaCode_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          cafeteriaCode_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string Cafeteria_Code = 4;</code>
+       * @param value The cafeteriaCode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCafeteriaCode(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        cafeteriaCode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string Cafeteria_Code = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCafeteriaCode() {
+        
+        cafeteriaCode_ = getDefaultInstance().getCafeteriaCode();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string Cafeteria_Code = 4;</code>
+       * @param value The bytes for cafeteriaCode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCafeteriaCodeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        cafeteriaCode_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:Building)
+    }
+
+    // @@protoc_insertion_point(class_scope:Building)
+    private static final PersonOuterClass.Building DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new PersonOuterClass.Building();
+    }
+
+    public static PersonOuterClass.Building getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Building>
+        PARSER = new com.google.protobuf.AbstractParser<Building>() {
+      @java.lang.Override
+      public Building parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Building(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<Building> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Building> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public PersonOuterClass.Building getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_Person_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_Person_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_Building_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_Building_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -1247,10 +2117,13 @@ public final class PersonOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\014person.proto\"r\n\006Person\022\014\n\004name\030\001 \001(\t\022\013" +
-      "\n\003age\030\002 \001(\005\022\017\n\007company\030\003 \001(\t\022\025\n\rbuilding" +
-      "_code\030\004 \001(\005\022\024\n\014phone_number\030\005 \001(\t\022\017\n\007add" +
-      "ress\030\006 \001(\tb\006proto3"
+      "\n\014person.proto\"\224\001\n\006Person\022\023\n\013Employee_ID" +
+      "\030\001 \001(\005\022\022\n\nFirst_Name\030\002 \001(\t\022\021\n\tLast_Name\030" +
+      "\003 \001(\t\022\r\n\005Email\030\004 \001(\t\022\022\n\nDepartment\030\005 \001(\t" +
+      "\022\025\n\rBuilding_Code\030\006 \001(\005\022\024\n\014Floor_Number\030" +
+      "\007 \001(\005\"e\n\010Building\022\025\n\rBuilding_Code\030\001 \001(\t" +
+      "\022\023\n\013Total_Floor\030\002 \001(\005\022\025\n\rNum_Companies\030\003" +
+      " \001(\005\022\026\n\016Cafeteria_Code\030\004 \001(\tb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1261,7 +2134,13 @@ public final class PersonOuterClass {
     internal_static_Person_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Person_descriptor,
-        new java.lang.String[] { "Name", "Age", "Company", "BuildingCode", "PhoneNumber", "Address", });
+        new java.lang.String[] { "EmployeeID", "FirstName", "LastName", "Email", "Department", "BuildingCode", "FloorNumber", });
+    internal_static_Building_descriptor =
+      getDescriptor().getMessageTypes().get(1);
+    internal_static_Building_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_Building_descriptor,
+        new java.lang.String[] { "BuildingCode", "TotalFloor", "NumCompanies", "CafeteriaCode", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

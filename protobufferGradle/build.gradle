@@ -1,0 +1,32 @@
+
+plugins {
+    id 'java'
+    id "com.google.protobuf" version "0.8.12"
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+
+dependencies {
+    implementation group: 'com.google.protobuf', name: 'protobuf-java', version: '3.11.0'
+    compileOnly "com.google.protobuf:protobuf-java:3.11.0"
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+}
+
+protobuf {
+    generatedFilesBaseDir = "$projectDir/src/main/java/com/manish/assignment3/"
+}
+
+
+
+test {
+    useJUnitPlatform()
+}
+
+
